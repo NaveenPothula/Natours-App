@@ -17,12 +17,7 @@ const app = require('./app');
 
 
 mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
-  })
+  .connect(process.env.DATABASE)
   .then(() => console.log('DB connection successful!'));
 
 const port = process.env.PORT || 3000;

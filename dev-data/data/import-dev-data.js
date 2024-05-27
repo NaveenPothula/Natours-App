@@ -7,18 +7,15 @@ const Review = require('./../../models/reviewModel');
 
 dotenv.config({ path: `./config.env` });
 
-const DB = process.env.DATABASE.replace(
-  '<PASSWORD>',
-  process.env.DATABASE_PASSWORD
-);
+// const DB = (
+//   '<PASSWORD>',
+//   process.env.DATABASE_PASSWORD
+// );
 
 mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
-  })
+  .connect(
+    'mongodb+srv://chinnapothula2001:P2ZQweDqCSmVPMFy@cluster0.0vf6khr.mongodb.net/natours?retryWrites=true&w=majority'
+  )
   .then(() => console.log('DB connection successful!'));
 
 // READ JSON FILE
